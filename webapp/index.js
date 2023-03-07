@@ -16,9 +16,10 @@ sap.ui.require([
         sap.ui.getCore().setModel(oModel);
         //this.getView().setModel(oModel)
 
-        //create a text ui element that displays a hardcoded text script
+        //display a text element whose text is derived
+        //from the model object
         new Text({
-            text: "Hi. my name is ...Praveen"
+            text: "{/greetingText}"
         }).placeAt("content");
     })
     //this.getView().getModel()
