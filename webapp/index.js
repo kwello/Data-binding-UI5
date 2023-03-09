@@ -21,7 +21,9 @@ sap.ui.require([
                 zip: "211269",
                 country: "India"
             },
-            panelHeaderText: "Data binding basics"
+            panelHeaderText: "Data binding basics",
+            salesAmount: 12345.6789,
+            currencyCode: "EUR"
         });
 
         var oResourceModel = new ResourceModel({
