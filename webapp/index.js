@@ -10,6 +10,13 @@ sap.ui.require([
     //attach an anonymous fucntion to the SAPUI5 'init' event
     sap.ui.getCore().attachInit(function (){
 
+        //agreggation binding to create model and load data from json file 
+        var oProductModel = new JSONModel();
+        oProductModel.loadData("./model/Products.json");
+        sap.ui.getCore().setModel(oProductModel, "products");
+
+
+
         //create a JSON model from an object literal
         var oModel = new JSONModel({
             firstName: "Tanjiro",
@@ -41,10 +48,17 @@ sap.ui.require([
         sap.ui.getCore().setModel(oModel);
         //this.getView().setModel(oModel)
 
-        //display the XML view called App
-        new XMLView({
+        //display the xml view called the App
+        var oView = new XMLView({
             viewName: "sap.ui.demo.db.view.App"
-        }).placeAt("content");
+        })
+
+        //register the view with the message manager
+        sap.ui.getCore().getMessageManager().registerObject(oView, true);
+
+
+        //display the XML view called App
+        oView.placeAt("content");
     })
     //this.getView().getModel()
 })
