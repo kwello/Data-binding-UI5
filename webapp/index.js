@@ -30,7 +30,8 @@ sap.ui.require([
             },
             panelHeaderText: "Data binding basics",
             salesAmount: 12345.6789,
-            currencyCode: "EUR"
+            currencyCode: "EUR",
+            priceThreshold: 20
         });
 
         var oResourceModel = new ResourceModel({
